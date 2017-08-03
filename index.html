@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"> -->
+  	<meta name="applicable-device" content="mobile">
+  	<meta name="viewport" content="width=640, user-scalable=no" />
+	<title>Demo</title>
+	<link href="css/base.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+	<script>
+    	document.body.style.height = view().h + "px";
+    </script>
+	<main>
+		<section>
+			<img src="images/bg_01.png">
+		</section>
+
+		<section class="bg02">
+			<h1><img src="images/title1.png"></h1>
+			<ul class="clearfix">
+				<li>
+					<img src="images/vip_1.png"><span>免费量尺</span>
+				</li>
+
+				<li>
+					<img src="images/vip_2.png"><span>免费设计</span>
+				</li>
+
+				<li>
+					<img src="images/vip_3.png"><span>5年质保</span>
+				</li>
+			</ul>
+		</section>
+
+		<section class="bg03">
+			<div class="bg03-01">
+				<h3 class="while">已有<b class="b">198</b>位成功预约</h3>
+			</div>
+			<div class="bg03-02">
+				<ul>
+					<li><p>吴先生 137****9843已预约</p></li>
+					<li><p>黄女士 186****4565已预约</p></li>
+					<li><p>刘先生 135****4382已预约</p></li>
+					<li><p>林先生 137****2156已预约</p></li>
+					<li><p>龚先生 137****3265已预约</p></li>
+					<li><p>区女士 137****6542已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+					<li><p>邓先生 137****9001已预约</p></li>
+				</ul>
+			</div>
+
+			<div class="time clearfix">
+				<span>距离活动结束仅剩<b id="time"></b></span><p id="time"></p>
+			</div>
+
+			<div class="bg03-03">
+				<form action="" method="post" id="submit">
+					<label>
+						<span>姓名</span>
+						<input placeholder="请输入您的姓名" type="text" name="">
+					</label>
+
+					<label>
+						<span>电话</span>
+						<input onblur="checkPhone()" id="y_mobile" placeholder="请输入您的电话号码" type="number" name="">
+					</label>
+					<span hidden="hidden" id="span" class="span"></span>
+
+
+					<label>
+						<span>省份</span>
+						<select name="province" id="province" onclick="getCity()">
+					   		<option value="">请选择省份</option>
+					   		<script type="text/javascript"> 
+                            for(var i=0;i<provinceArr.length;i++)    
+                            {
+                                document.write("<option value='"+i+"'>"+provinceArr[i]+"</option>");
+                                
+                            }
+                           </script>
+					    </select>
+					</label>
+
+					<label>
+						<span>城市</span>
+						<select name="city" id="city" class="city">
+					   		<option value="">请选择城市</option>
+					    </select>
+					</label>
+
+					<label valign="top">
+						<span>地址</span>
+						<input placeholder="请输入您的详细地址" type="text" name="">
+					</label>
+					<span hidden="hidden" id="onCli" class="span"></span>
+					<input onclick="onCli()" class="btn btn1" type="button" name="" value="立即预约　享免费服务">
+
+				</form>
+			</div>
+
+		</section>
+		<script type="text/javascript">
+		$(function(){
+			$(".bg03 .bg03-02").myScroll({
+				speed: 40,      // 数值越大 速度越慢
+				rowHeight: 220  // li的高度
+			})
+		})
+		</script>
+
+
+		<section class="bg04">
+			<h1><img src="images/title2.png"></h1>
+
+			<div class="bg04-01">
+				<img src="images/title2_1.png">
+				<p>活动期间进店即送精美礼品一份</p>
+				<img src="images/giff.png">
+				<button class="btn">立即<b>预约</b>进店</button>
+			</div>
+
+			<div class="bg04-02">
+				<s><img src="images/title2_2.png"></s>
+				<p>活动期间，单个订单正价商品</p>
+				<div class="bg04-02-div">
+					<img class="i" src="images/discount_1500.png">
+					<img class="i i1 " src="images/discount_1500.png">
+					<img class="i" src="images/discount_1500.png">
+					<img class="i i1" src="images/discount_1500.png">
+				</div>
+				<button class="btn">立即<b>抢</b>进店</button>
+			</div>
+
+			<div class="bg04-03">
+				<s><img src="images/title2_3.png"></s>
+				<div class="bg04-03-01">
+					<img src="images/pro_1.png">
+					<div>
+						<span>英伦格调二轨推拉窗</span>
+						<button class="btn">立即预订</button>
+					</div>
+				</div>
+
+				<div class="bg04-03-01">
+					<img src="images/pro_2.png">
+					<div>
+						<span>巴黎时尚单体平开窗</span>
+						<button class="btn">立即预订</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="bg05">
+			<h1><img src="images/title3.png"></h1>
+			<div class="bg05-01">
+				<h1><img src="images/title3_1.png"></h1>
+				<div>
+					<img src="images/pro_3.png">
+					<img src="images/pro_4.png">
+					<div>
+						<p>皇爵端隔热平开窗</p>
+						<button class="btn">立即预订</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg05-02 clearfix">
+				<h1><img src="images/title3_2.png"></h1>
+				<div class="clearfix">
+					<img src="images/yinglun.png">
+					<img src="images/yinglun.png">
+				</div>
+				<span>英伦格调室外二轨推拉门</span>
+				<button class="btn">立即预订</button>
+			</div>
+
+			<div class="bg05-03 clearfix">
+				<h1><img src="images/title3_3.png"></h1>
+				<div class="pro1">
+					<img src="images/pro_7.png">
+				</div>
+				<div class="clearfix pro2">
+					<img src="images/pro_8.png">
+					<img src="images/pro_9.png">
+				</div>
+				<span>宝国饰家系列</span>
+				<button class="btn">立即预订</button>
+			</div>
+		</section>
+
+		<section class="bg06">
+			<h1><img src="images/title4.png"></h1>
+
+			<div class="bg06-01">
+				<img src="images/h1.png">
+				<span><h1>15万平米</h1><h3>厂房的质量保证</h3><br><br><h3>集产品研发、设计、生产于一体，企业规模行业遥遥领先</h3><br><br><h6>This is the precept by which I have lived: Prepare for the worst; expect the best; and take what comes.</h6></span>
+			</div>
+
+			<div class="bg06-01 bg06-02">
+				<img src="images/h2.png">
+				<span><h1>企业荣耀</h1><br><br><h3>企业凭着过硬的产品质量荣获</h3><h3>"中国整体家居联盟主席单位"</h3><h3>"2015-2016年全国家居消费者喜爱品牌"</h3><h3>"2015中国家居产业百强榜大雁奖"</h3><h3>"最佳节能环保门窗产品"等多项荣誉</h3></span>
+				
+			</div>
+
+			<div class="bg06-01 bg06-03">
+				<img src="images/h3.png">
+				<ul>
+					<li><img src="images/h4.png"></li>
+					<li><img src="images/h5.png"></li>
+				</ul>
+				<span>
+					<h1>1500家门店的售后承诺</h1><h3>5年质保、终身维护</h3><br>
+					<h6>A good idea will keep you awake during the morning, but a great idea will keep you awake during the night.</h6>
+				</span>
+			</div>
+		</section>
+
+		<section class="bg07">
+			<img src="images/bg_07.png">
+		</section>
+
+		<div class="last">
+			<button class="btn"><a href="tel:4008300800">咨询热线</a></button>
+			<button class="btn">立即预约</button>
+		</div>
+	</main>
+</body>
+</html>

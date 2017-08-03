@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>信息</title>
+	<script type="text/javascript" src="js/base.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	    var url = window.location.href;
+	    
+		url=decodeURI(url);
+		var str = GetQueryString("str");
+		alert(str);
+		alert(url);
+		document.writeln(str);
+	</script>
+</body>
+</html>
