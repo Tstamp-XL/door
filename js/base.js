@@ -52,6 +52,16 @@ function GetQueryString(name)
      if(r!=null)return  decodeURI(r[2]); return null;
 }
 
+// 跳转到页面的某处
+function onTopClick(href) {
+	// window.location.hash = "#submit";
+	// alert(new Date().getTime());
+	var s = new Date().getTime();
+	window.location.hash = "#"+href;
+	window.location.hash = s;
+	// alert(window.location.hash);
+}
+
     var provinceArr = [];
     provinceArr[0] = ["广东省"];
     provinceArr[1] = ["湖北省"];
